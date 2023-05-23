@@ -1,0 +1,14 @@
+/Users/joseluisillo/Projects/MySql/MySql/Shared/bin/Debug/net7.0/MySql.Shared.deps.json
+/Users/joseluisillo/Projects/MySql/MySql/Shared/bin/Debug/net7.0/MySql.Shared.runtimeconfig.json
+/Users/joseluisillo/Projects/MySql/MySql/Shared/bin/Debug/net7.0/MySql.Shared.dll
+/Users/joseluisillo/Projects/MySql/MySql/Shared/bin/Debug/net7.0/MySql.Shared.pdb
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.csproj.AssemblyReference.cache
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.AssemblyInfoInputs.cache
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.AssemblyInfo.cs
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.csproj.CoreCompileInputs.cache
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.dll
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/refint/MySql.Shared.dll
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.pdb
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/MySql.Shared.genruntimeconfig.cache
+/Users/joseluisillo/Projects/MySql/MySql/Shared/obj/Debug/net7.0/ref/MySql.Shared.dll
