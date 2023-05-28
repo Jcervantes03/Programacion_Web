@@ -1,1 +1,81 @@
-﻿
+﻿@page "/prestamos"
+@using MySql.Models
+@inject SaleDbContext dbContext
+@inject HttpClient Http
+
+<h3>Lista de Préstamos</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Monto</th>
+            <th>Plazo</th>
+            <th>Tasa de Interés</th>
+            <th>Garantía</th>
+            <th>Deuda</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prestamo in dbContext.Prestamos.Include(p => p.Cliente).Include(p => p.Garantia))
+        {
+            <tr>
+                <td>@prestamo.Cliente.Nombre</td>
+                <td>@prestamo.Monto</td>
+                <td>@prestamo.Plazo</td>
+                <td>@prestamo.TasaInteres</td>
+                <td>@prestamo.Garantia.Descripcion</td>
+                <td>@CalcularDeuda(prestamo.Id)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post" action="/prestamos">
+    <h4>Agregar Préstamo</h4>
+
+    <div class="form-group">
+        <label for="clienteId">Cliente:</label>
+        <select id="clienteId" name="clienteId" class="form-control">
+            @foreach (var cliente in dbContext.Clientes)
+            {
+                <option value="@cliente.Id">@cliente.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="plazo">Plazo:</label>
+        <input type="number" id="plazo" name="plazo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="tasaInteres">Tasa de Interés:</label>
+        <input type="number" id="tasaInteres" name="tasaInteres" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="garantiaId">Garantía:</label>
+        <select id="garantiaId" name="garantiaId" class="form-control">
+            @foreach (var garantia in dbContext.Garantias)
+            {
+                <option value="@garantia.Id">@garantia.Descripcion</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Préstamo</button>
+</form>
+
+@code {
+    decimal CalcularDeuda(Prestamo prestamo)
+    {
+        decimal deuda = prestamo.Monto * (1 + (prestamo.TasaInteres / 100));
+        return deuda;
+    }
+}
